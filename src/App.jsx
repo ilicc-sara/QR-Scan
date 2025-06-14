@@ -5,16 +5,16 @@ function App() {
   return (
     <>
       <nav>
-        <button>Generate</button>
+        <button className="btn-active">Generate</button>
       </nav>
 
       <main>
-        <div>
+        <div className="scan-unactive">
           <img src="./scanCode.png" alt="scan" />
           <h4>Time is up!</h4>
-          <button>Generate</button>
+          <button className="btn-active">Generate</button>
         </div>
-        <button className="download-btn">Download</button>
+        <button className="download-btn btn-active">Download</button>
       </main>
     </>
   );
