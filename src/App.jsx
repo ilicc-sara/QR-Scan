@@ -9,8 +9,12 @@ function App() {
       </nav>
 
       <main>
-        <div></div>
-        <button>Download</button>
+        <div>
+          <img src="./scanCode.png" alt="scan" />
+          <h4>Time is up!</h4>
+          <button>Generate</button>
+        </div>
+        <button className="download-btn">Download</button>
       </main>
     </>
   );
