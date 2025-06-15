@@ -10,6 +10,8 @@ function App() {
     let time = 11;
 
     const tick = function () {
+      setActive(true);
+
       time--;
 
       console.log(time);
@@ -18,6 +20,7 @@ function App() {
 
       if (time === 0) {
         clearInterval(timer);
+        setActive(false);
       }
     };
 
@@ -28,18 +31,28 @@ function App() {
   return (
     <>
       <nav>
-        <Button handleClick={timerFunction} />
+        <Button
+          handleClick={timerFunction}
+          active={active}
+          setActive={setActive}
+          text="Generate"
+        />
       </nav>
 
       <main>
-        <div className="scan-unactive">
+        <div className={`${!active ? "scan-inactive" : "scan-active"}`}>
           <img src="./scanCode.png" alt="scan" />
-          <h4>Time is up!</h4>
-          <Button handleClick={timerFunction} />
+          <h4 className={`${!active ? "" : "hidden"}`}>Time is up!</h4>
+          <Button
+            handleClick={timerFunction}
+            active={active}
+            setActive={setActive}
+            text="Generate"
+          />
         </div>
         <p>{time} s</p>
         {/* <button className="download-btn btn-active">Download</button> */}
-        <Button typeProp={"Download-Btn"} />
+        <Button typeProp={"Download-Btn"} text="Download" />
       </main>
     </>
   );
