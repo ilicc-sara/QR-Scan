@@ -1,10 +1,6 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: rgb(21, 21, 21);
-  /* 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; */
 }
 
 * {
@@ -38,7 +34,6 @@ main {
 }
 
 main div {
-  /* background-color: rgb(248 113 113); */
   height: 100%;
   width: 200px;
   border-radius: 10px;
@@ -75,8 +70,6 @@ button {
   padding: 0 15px;
   border-radius: 7px;
   border: none;
-  /* background-color: rgb(74, 222, 128);
-  background-color: rgb(209, 213, 219); */
   letter-spacing: 0.5px;
 }
 
@@ -86,6 +79,37 @@ button {
 
 .btn-inactive {
   background-color: rgb(209, 213, 219);
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  transition: opacity 0.75s, visibility 0.75s;
+  z-index: 9998;
+}
+
+.loader::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 8px solid #dddddd;
+  border-top-color: rgb(74, 222, 128);
+
+  border-radius: 50%;
+  animation: loading 0.95s ease infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 .hidden {
