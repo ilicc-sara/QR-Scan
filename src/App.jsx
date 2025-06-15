@@ -3,6 +3,7 @@ import "./App.css";
 
 function App() {
   const [time, setTime] = useState(0);
+  const [active, setActive] = useState(false);
 
   const timerFunction = function () {
     let time = 11;
@@ -38,7 +39,12 @@ function App() {
           <button className="btn-active">Generate</button>
         </div>
         <p>{time} s</p>
-        <button className="download-btn btn-active">Download</button>
+        <button
+          className="download-btn btn-active"
+          onClick={() => timerFunction()}
+        >
+          Download
+        </button>
       </main>
     </>
   );
