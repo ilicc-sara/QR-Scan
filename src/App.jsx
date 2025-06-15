@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import Button from "./Button";
 
 function App() {
   const [time, setTime] = useState(0);
@@ -27,24 +28,18 @@ function App() {
   return (
     <>
       <nav>
-        <button className="btn-active" onClick={() => timerFunction()}>
-          Generate
-        </button>
+        <Button handleClick={timerFunction} />
       </nav>
 
       <main>
         <div className="scan-unactive">
           <img src="./scanCode.png" alt="scan" />
           <h4>Time is up!</h4>
-          <button className="btn-active">Generate</button>
+          <Button handleClick={timerFunction} />
         </div>
         <p>{time} s</p>
-        <button
-          className="download-btn btn-active"
-          onClick={() => timerFunction()}
-        >
-          Download
-        </button>
+        {/* <button className="download-btn btn-active">Download</button> */}
+        <Button typeProp={"Download-Btn"} />
       </main>
     </>
   );
