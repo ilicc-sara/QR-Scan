@@ -57,7 +57,7 @@ function App() {
               </Button>
             </div>
             <p>{time} s</p>
-            <Button variation={"Download-Btn"} active={active}>
+            <Button variation={"Download-Btn"} active={!active}>
               Download
             </Button>
           </>
